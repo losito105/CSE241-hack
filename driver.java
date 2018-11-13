@@ -7,7 +7,7 @@ public class driver {
 	 * TODO 
 	 * update printing the truth tables so they say whatever the output variable name was for the input function not just "F"
 	 * NEXT
-	 * k-maps functionality
+	 * simplified functions functionality
 	 */
 	static String function="";
 	static ArrayList<Character> inputVars=new ArrayList<Character>();
@@ -63,7 +63,7 @@ public class driver {
 		}
 		String concat = "";
 		
-		System.out.println(concat);
+		System.out.print(concat);
 		
 		for(int w=0;w<tempChars.size();w++) {
 			concat = concat + tempChars.get(w);
@@ -253,9 +253,262 @@ public class driver {
 	}
 	
 	public static void kmap(String func) {
-		if(howManyInputVar==3) {
+		if(howManyInputVar==3 && whichFuncType==true) {
+//			F | 00 | 01 | 11 | 10 |
+//			0 |    |    |    |    |//corresponds with 0,2,6,4
+//			1 |    |    |    |    |//corresponds with 1,3,7,5
+			ArrayList<String> firstRow = new ArrayList<String>();
+			firstRow.add("  ");
+			firstRow.add("00");
+			firstRow.add("01");
+			firstRow.add("11");
+			firstRow.add("10");
+			
+			ArrayList<String> secondRow = new ArrayList<String>();
+			secondRow.add("0");
+			if(whereOnesAre.contains(0)) {secondRow.add("1");}
+			else {secondRow.add("0");}
+			if(whereOnesAre.contains(2)) {secondRow.add("1");}
+			else {secondRow.add("0");}
+			if(whereOnesAre.contains(6)) {secondRow.add("1");}
+			else {secondRow.add("0");}
+			if(whereOnesAre.contains(4)) {secondRow.add("1");}
+			else {secondRow.add("0");}
+			
+			ArrayList<String> thirdRow = new ArrayList<String>();
+			thirdRow.add("1");
+			if(whereOnesAre.contains(1)) {thirdRow.add("1");}
+			else {thirdRow.add("0");}
+			if(whereOnesAre.contains(3)) {thirdRow.add("1");}
+			else {thirdRow.add("0");}
+			if(whereOnesAre.contains(7)) {thirdRow.add("1");}
+			else {thirdRow.add("0");}
+			if(whereOnesAre.contains(5)) {thirdRow.add("1");}
+			else {thirdRow.add("0");}
+			
+			for(String s: firstRow) {
+				System.out.print(s + "| ");
+			}
+			System.out.println();
+			System.out.println("-------------------");
+			for(String s: secondRow) {
+				System.out.print(s + " | ");
+			}
+			System.out.println();
+			System.out.println("-------------------");
+			for(String s: thirdRow) {
+				System.out.print(s + " | ");
+			}
+			System.out.println();
+			System.out.println("-------------------");
 		}
-		else if(howManyInputVar==4) {
+		else if(howManyInputVar==3 && whichFuncType==false) {
+//			F | 00 | 01 | 11 | 10 |
+//			0 |    |    |    |    |//corresponds with 0,2,6,4
+//			1 |    |    |    |    |//corresponds with 1,3,7,5
+			ArrayList<String> firstRow = new ArrayList<String>();
+			firstRow.add("  ");
+			firstRow.add("00");
+			firstRow.add("01");
+			firstRow.add("11");
+			firstRow.add("10");
+			
+			ArrayList<String> secondRow = new ArrayList<String>();
+			secondRow.add("0");
+			if(whereOnesAre.contains(0)) {secondRow.add("0");}
+			else {secondRow.add("1");}
+			if(whereOnesAre.contains(2)) {secondRow.add("0");}
+			else {secondRow.add("1");}
+			if(whereOnesAre.contains(6)) {secondRow.add("0");}
+			else {secondRow.add("1");}
+			if(whereOnesAre.contains(4)) {secondRow.add("0");}
+			else {secondRow.add("1");}
+			
+			ArrayList<String> thirdRow = new ArrayList<String>();
+			thirdRow.add("1");
+			if(whereOnesAre.contains(1)) {thirdRow.add("0");}
+			else {thirdRow.add("1");}
+			if(whereOnesAre.contains(3)) {thirdRow.add("0");}
+			else {thirdRow.add("1");}
+			if(whereOnesAre.contains(7)) {thirdRow.add("0");}
+			else {thirdRow.add("1");}
+			if(whereOnesAre.contains(5)) {thirdRow.add("0");}
+			else {thirdRow.add("1");}
+			
+			for(String s: firstRow) {
+				System.out.print(s + "| ");
+			}
+			System.out.println();
+			System.out.println("-------------------");
+			for(String s: secondRow) {
+				System.out.print(s + " | ");
+			}
+			System.out.println();
+			System.out.println("-------------------");
+			for(String s: thirdRow) {
+				System.out.print(s + " | ");
+			}
+			System.out.println();
+			System.out.println("-------------------");
+		}
+		
+		else if(howManyInputVar==4&& whichFuncType==true) {
+//			 F | 00 | 01 | 11 | 10 |
+//			00 |    |    |    |    |//corresponds with 0,4,12,8
+//			01 |    |    |    |    |//corresponds with 1,5,13,9
+//			11 |    |    |    |    |//corresponds with 3,7,15,11
+//			10 |    |    |    |    |//corresponds with 2,6,14,10
+			ArrayList<String> firstRow = new ArrayList<String>();
+			firstRow.add("   ");
+			firstRow.add("00");
+			firstRow.add("01");
+			firstRow.add("11");
+			firstRow.add("10");
+			ArrayList<String> secondRow = new ArrayList<String>();
+			secondRow.add("00");
+			if(whereOnesAre.contains(0)) {secondRow.add("1");}
+			else {secondRow.add("0");}
+			if(whereOnesAre.contains(4)) {secondRow.add("1");}
+			else {secondRow.add("0");}
+			if(whereOnesAre.contains(12)) {secondRow.add("1");}
+			else {secondRow.add("0");}
+			if(whereOnesAre.contains(8)) {secondRow.add("1");}
+			else {secondRow.add("0");}
+			ArrayList<String> thirdRow = new ArrayList<String>();
+			thirdRow.add("01");
+			if(whereOnesAre.contains(1)) {thirdRow.add("1");}
+			else {thirdRow.add("0");}
+			if(whereOnesAre.contains(5)) {thirdRow.add("1");}
+			else {thirdRow.add("0");}
+			if(whereOnesAre.contains(13)) {thirdRow.add("1");}
+			else {thirdRow.add("0");}
+			if(whereOnesAre.contains(9)) {thirdRow.add("1");}
+			else {thirdRow.add("0");}
+			ArrayList<String> fourthRow = new ArrayList<String>();
+			fourthRow.add("11");
+			if(whereOnesAre.contains(3)) {fourthRow.add("1");}
+			else {fourthRow.add("0");}
+			if(whereOnesAre.contains(7)) {fourthRow.add("1");}
+			else {fourthRow.add("0");}
+			if(whereOnesAre.contains(15)) {fourthRow.add("1");}
+			else {fourthRow.add("0");}
+			if(whereOnesAre.contains(11)) {fourthRow.add("1");}
+			else {fourthRow.add("0");}
+			ArrayList<String> fifthRow = new ArrayList<String>();
+			fifthRow.add("10");
+			if(whereOnesAre.contains(2)) {fifthRow.add("1");}
+			else {fifthRow.add("0");}
+			if(whereOnesAre.contains(6)) {fifthRow.add("1");}
+			else {fifthRow.add("0");}
+			if(whereOnesAre.contains(14)) {fifthRow.add("1");}
+			else {fifthRow.add("0");}
+			if(whereOnesAre.contains(10)) {fifthRow.add("1");}
+			else {fifthRow.add("0");}
+			
+			for(String s: firstRow) {
+				System.out.print(s + "| ");
+			}
+			System.out.println();
+			System.out.println("--------------------");
+			for(String s: secondRow) {
+				System.out.print(s + " | ");
+			}
+			System.out.println();
+			System.out.println("--------------------");
+			for(String s: thirdRow) {
+				System.out.print(s + " | ");
+			}
+			System.out.println();
+			System.out.println("--------------------");
+			for(String s: fourthRow) {
+				System.out.print(s + " | ");
+			}
+			System.out.println();
+			System.out.println("--------------------");
+			for(String s: fifthRow) {
+				System.out.print(s + " | ");
+			}
+			System.out.println();
+			System.out.println("--------------------");
+		}
+		else if(howManyInputVar==4&& whichFuncType==false) {
+//			 F | 00 | 01 | 11 | 10 |
+//			00 |    |    |    |    |//corresponds with 0,4,12,8
+//			01 |    |    |    |    |//corresponds with 1,5,13,9
+//			11 |    |    |    |    |//corresponds with 3,7,15,11
+//			10 |    |    |    |    |//corresponds with 2,6,14,10
+			ArrayList<String> firstRow = new ArrayList<String>();
+			firstRow.add("   ");
+			firstRow.add("00");
+			firstRow.add("01");
+			firstRow.add("11");
+			firstRow.add("10");
+			ArrayList<String> secondRow = new ArrayList<String>();
+			secondRow.add("00");
+			if(whereOnesAre.contains(0)) {secondRow.add("0");}
+			else {secondRow.add("1");}
+			if(whereOnesAre.contains(4)) {secondRow.add("0");}
+			else {secondRow.add("1");}
+			if(whereOnesAre.contains(12)) {secondRow.add("0");}
+			else {secondRow.add("1");}
+			if(whereOnesAre.contains(8)) {secondRow.add("0");}
+			else {secondRow.add("1");}
+			ArrayList<String> thirdRow = new ArrayList<String>();
+			thirdRow.add("01");
+			if(whereOnesAre.contains(1)) {thirdRow.add("0");}
+			else {thirdRow.add("1");}
+			if(whereOnesAre.contains(5)) {thirdRow.add("0");}
+			else {thirdRow.add("1");}
+			if(whereOnesAre.contains(13)) {thirdRow.add("0");}
+			else {thirdRow.add("1");}
+			if(whereOnesAre.contains(9)) {thirdRow.add("0");}
+			else {thirdRow.add("1");}
+			ArrayList<String> fourthRow = new ArrayList<String>();
+			fourthRow.add("11");
+			if(whereOnesAre.contains(3)) {fourthRow.add("0");}
+			else {fourthRow.add("1");}
+			if(whereOnesAre.contains(7)) {fourthRow.add("0");}
+			else {fourthRow.add("1");}
+			if(whereOnesAre.contains(15)) {fourthRow.add("0");}
+			else {fourthRow.add("1");}
+			if(whereOnesAre.contains(11)) {fourthRow.add("0");}
+			else {fourthRow.add("1");}
+			ArrayList<String> fifthRow = new ArrayList<String>();
+			fifthRow.add("10");
+			if(whereOnesAre.contains(2)) {fifthRow.add("0");}
+			else {fifthRow.add("1");}
+			if(whereOnesAre.contains(6)) {fifthRow.add("0");}
+			else {fifthRow.add("1");}
+			if(whereOnesAre.contains(14)) {fifthRow.add("0");}
+			else {fifthRow.add("1");}
+			if(whereOnesAre.contains(10)) {fifthRow.add("0");}
+			else {fifthRow.add("1");}
+			
+			for(String s: firstRow) {
+				System.out.print(s + "| ");
+			}
+			System.out.println();
+			System.out.println("--------------------");
+			for(String s: secondRow) {
+				System.out.print(s + " | ");
+			}
+			System.out.println();
+			System.out.println("--------------------");
+			for(String s: thirdRow) {
+				System.out.print(s + " | ");
+			}
+			System.out.println();
+			System.out.println("--------------------");
+			for(String s: fourthRow) {
+				System.out.print(s + " | ");
+			}
+			System.out.println();
+			System.out.println("--------------------");
+			for(String s: fifthRow) {
+				System.out.print(s + " | ");
+			}
+			System.out.println();
+			System.out.println("--------------------");
 		}
 	}
 	
@@ -273,6 +526,7 @@ public class driver {
 		
 		if(continueString.equals("y")) {
 			Scanner kb = new Scanner(System.in);
+			System.out.println();
 			System.out.println("TRUTH TABLE");
 			System.out.println("Please enter your function.");
 			System.out.println("Function should be entered in the form:");
@@ -281,6 +535,7 @@ public class driver {
 			System.out.println("F(A,B,C...)=POS of (0,1,2,3,4,5,6...) for POS (∏)");
 			String function = kb.nextLine();
 			truthTable(function);
+			System.out.println();
 			System.out.println("CANONICAL FUNCTION");
 			System.out.println("Would you like to see the canonical function? (y) or (n)");
 			String canonicalOrNot = kb.nextLine();
@@ -293,7 +548,6 @@ public class driver {
 				String kmapDecision=kb.nextLine();
 				if(kmapDecision.equals("y")) {
 					kmap(function);
-					System.out.println("THIS FEATURE IS UNDER CONSTRUCTION");//temporary print out DELETE ONCE FUNCTIONALITY ADDED
 				}
 				else {
 					System.out.println("Okay have a nice day.");
