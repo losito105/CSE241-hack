@@ -3,12 +3,7 @@ package code;
 import java.util.*;
 
 public class driver {
-	/**
-	 * TODO 
-	 * update printing the truth tables so they say whatever the output variable name was for the input function not just "F"
-	 * NEXT
-	 * simplified functions functionality
-	 */
+
 	static String function="";
 	static ArrayList<Character> inputVars=new ArrayList<Character>();
 	static ArrayList<Integer> whereOnesAre = new ArrayList<Integer>();
@@ -511,15 +506,12 @@ public class driver {
 			System.out.println("--------------------");
 		}
 	}
-	
 	public static void main(String[] args) {
 		Scanner kbWelcome = new Scanner(System.in);
 		System.out.println("This program can generate you a:");
 		System.out.println("  1. Truth Table");
 		System.out.println("  2. Canonical SOP or POS function");
 		System.out.println("  3. K-map");
-		System.out.println("  3. Simplified SOP or POS function");
-		System.out.println("  4. Logic Diagram");
 		System.out.println("based on an input function of 3 or 4 variables.");
 		System.out.println("Do you wish to continue? (y) or (n)");
 		String continueString = kbWelcome.nextLine();
